@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-native';
-import Header from './components/Header'
+import Header from './components/Header';
+import ToDoItem from './components/ToDoItem';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -19,7 +20,7 @@ export default function App() {
           <FlatList 
             data={todos}
             renderItem={( { item } ) => (
-              <Text>{item.text}</Text>
+              <ToDoItem item={item}/>
             )}
           />
 
