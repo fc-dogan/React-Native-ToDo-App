@@ -10,6 +10,12 @@ export default function App() {
     { text: 'create an app', key: '2' },
     { text: 'play on the switch', key: '3' }
   ]);
+    
+    const pressHandler = (key) => {
+      setTodos( (prevTodos) => {
+        return prevTodos.filter(todo => todo.key !== key)
+      })
+    }
 
   return (
     <View style={styles.container}>
@@ -20,7 +26,7 @@ export default function App() {
           <FlatList 
             data={todos}
             renderItem={( { item } ) => (
-              <ToDoItem item={item}/>
+              <ToDoItem item={item} onPress={pressHandler}/>
             )}
           />
 

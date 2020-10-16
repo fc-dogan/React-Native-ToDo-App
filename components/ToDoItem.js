@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react'
 
 function ToDoItem(props) {
-  const { item } = props;
+  const { item, onPress } = props;
   return (
-    <TouchableOpacity >
+    <TouchableOpacity onPress={() => onPress(item.key)}>
       <Text style={styles.item}>{item.text}</Text>
     </TouchableOpacity>
   )
