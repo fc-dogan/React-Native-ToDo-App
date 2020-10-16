@@ -4,6 +4,7 @@ import React from 'react'
 
 function ToDoItem(props) {
   const { item, onPress } = props;
+  console.log(item.text + " key: " + item.key)
   return (
     <TouchableOpacity onPress={() => onPress(item.key)}>
       <Text style={styles.item}>{item.text}</Text>
